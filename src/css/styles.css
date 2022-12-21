@@ -18,3 +18,80 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.search-form input {
+  border-radius: 4px;
+  background-color: rgb(192, 237, 192);
+  padding: 6px;
+  border: none;
+  outline: none;
+}
+
+.gallery {
+  max-width: 100%;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.gallery-link {
+  text-decoration: none;
+}
+
+.gallery-image {
+  max-width: 100%;
+  flex-basis: calc((100% - 30px) / 3);
+}
+
+.info {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.load-more {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 5px;
+  background-color: lightsteelblue;
+  border: none;
+}
+
+.search-form button {
+  padding: 5px;
+  background-color: lightsteelblue;
+  border: none;
+}
+
+.is-hidden {
+  display: none;
+}
