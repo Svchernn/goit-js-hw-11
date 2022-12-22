@@ -39,11 +39,15 @@ async function onLoadMore(e) {
   newGallery.refresh();
   const markup = renderPictures(data.hits);
   refs.galleryBox.insertAdjacentHTML('beforeend', markup);
+  newGallery.refresh();
+  scrollSmooth();
 
   const lastPage = data.totalHits / 40;
-  if (this.page >= lastPage) {
+  if (imgApiService.page >= lastPage) {
+    Notiflix.Notify.info(
+      `We're sorry, but you've reached the end of search results.`
+    );
     loadMoreBtn.hide();
-    Notify.info("We're sorry, but you've reached the end of search results.");
   }
 }
 
@@ -115,3 +119,14 @@ let newGallery = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
   animationSlide: true,
 });
+
+function scrollSmooth() {
+  const { height: cardHeight } = document
+    .querySelector('.gallery')
+    .firstElementChild.getBoundingClientRect();
+
+  window.scrollBy({
+    top: cardHeight * 2,
+    behavior: 'smooth',
+  });
+}
