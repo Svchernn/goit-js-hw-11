@@ -106,10 +106,6 @@ function renderPictures(pictures) {
     .join('');
 }
 
-// function appendPictures(data) {
-//   refs.galleryBox.insertAdjacentHTML('beforeend', renderPictures(data));
-// }
-
 function clearGallery() {
   refs.galleryBox.innerHTML = '';
 }
