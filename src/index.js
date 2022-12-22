@@ -36,7 +36,6 @@ async function onSearch(e) {
 
 async function onLoadMore(e) {
   const data = await imgApiService.fetchPictures();
-  newGallery.refresh();
   const markup = renderPictures(data.hits);
   refs.galleryBox.insertAdjacentHTML('beforeend', markup);
   newGallery.refresh();
