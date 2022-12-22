@@ -12,9 +12,9 @@ export default class ImgApiService {
       `https://pixabay.com/api/?key=32171401-514b83b6102b11560a1fef5f9&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=40`
     );
     const data = await response.data;
-    // if (response.status !== 200) {
-    //   throw new Error(response.status);
-    // }
+    if (response.status !== 200) {
+      throw new Error(response.status);
+    }
 
     this.incrementPage();
     return data;
